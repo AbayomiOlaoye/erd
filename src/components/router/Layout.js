@@ -6,7 +6,7 @@ import Auth from './Auth';
 import UnAuth from './UnAuth';
 
 const Layout = () => {
-  const isAuth = false;
+  const isAuth = true;
   return (
     <BrowserRouter>
       <ToastContainer theme="colored" position="top-right" />
@@ -19,4 +19,4 @@ const Layout = () => {
   );
 };
 
-export default Layout
+export default Layout;
