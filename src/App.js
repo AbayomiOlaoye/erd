@@ -2,16 +2,21 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/router/Layout';
 import Nav from './components/SideBar/Nav';
+import TopBar from './components/SideBar/TopBar';
+import './App.css';
 
 function App() {
+  const isAuth = true;
   return (
-    <>
-        <BrowserRouter>
+    <div className="container">
+      {isAuth && <BrowserRouter>
+        <TopBar />
+        <div className="App">
           <Nav />
-        </BrowserRouter>
-
-      <Layout />
-    </> 
+          <Layout />
+        </div>
+      </BrowserRouter>}
+    </div> 
   );
 }
 

@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ImSpinner3 } from 'react-icons/im';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import logo from '../../../assets/main_logo.svg';
 // import { userLogin } from '../redux/reducer/authActions';
 import styles from './Login.module.scss';
 
@@ -20,7 +21,7 @@ const Login = () => {
   }, []);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   // const { loading, isAuthenticated } = useSelector((state) => state.auth);
 
 
@@ -52,8 +53,17 @@ const Login = () => {
   };
 
   return (
-    <>
-      <section className={styles.container}>
+    <section className={styles.container}>
+      <div className={styles.imgContainer}>
+        <img
+          src={logo}
+          alt="login"
+          className={styles.img}
+        />
+        <p className={styles.pretext}>...Thank you for service</p>
+      </div>
+      <div className={styles.formDiv}>
+        <h4 className={styles.title}>Log into Your Account</h4>
         <form id="login" className={styles.form} onSubmit={handleSubmit}>
           <input
             type="email"
@@ -78,10 +88,6 @@ const Login = () => {
           <button type="submit" className={styles.btn} disabled={loading}>
             { loading ? <ImSpinner3 className={styles.spinner} /> : 'Login' }
           </button>
-          <p className={styles.link}>
-            Don&apos;t have an account?
-            <Link to="/register"> Register</Link>
-          </p>
         </form>
         {isAuthenticated && (
           <article className={styles.success}>
@@ -91,12 +97,11 @@ const Login = () => {
               frameBorder="none"
             />
             <p>Login successful</p>
-            <Link to="/">Continue to Home</Link>
+            <Link to="/dashboard">Continue to Dashboard</Link>
           </article>
         )}
-
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

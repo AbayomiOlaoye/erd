@@ -1,6 +1,5 @@
-.container {
-  width: 72vw;
+.homeContainer {
+  width: 80%;
   display: flex;
-  position: absolute;
-  left: 28vw;
+  flex-direction: column;
 }

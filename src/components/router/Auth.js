@@ -1,15 +1,25 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import DashBoard from '../pages/Dashboard/Dashboard';
 import Home from '../pages/Home/Home';
 import ErrorPage from '../ErrorPage';
-// import Nav from '../SideBar/Nav';
+import User from '../pages/User/User';
+import UserList from '../pages/User/UserList';
+import Product from '../pages/Product/Product';
+import ProductList from '../pages/Product/ProductList';
+import StaffData from '../pages/Hr/StaffData';
+import Staff from '../pages/Hr/Staff';
+
 
 const Auth = () => {
   return (
     <Routes>
-      <Route index element={<Home />} />
-      <Route path="/dashboard" element={<DashBoard />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/staff_data" element={<StaffData />} />
+      <Route path="/staff_data/:staffId" element={<Staff />} />
+      <Route path="/users" element={<UserList />} />
+      <Route path="/user/:userId" element={<User />} />
+      <Route path="/products" element={<ProductList />} />
+      <Route path="/product/:productId" element={<Product />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );

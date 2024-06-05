@@ -1,0 +1,232 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.center {
+  text-align: center;
+}
+
+/************/
+
+.container {
+  @extend .flexCol;
+  height: 100vh;
+  padding-top: 5rem;
+  gap: 3rem;
+
+  .imgContainer {
+    @extend .center;
+    img {
+      max-width: 80%;
+    }
+
+    .pretext {
+      margin: 1rem;
+      font-style: italic;
+      color: antiquewhite;
+    }
+  }
+
+  .formDiv {
+    // @extend .auto;
+    @extend .flexCol;
+    @extend .alignItemsCenter;
+
+    .title {
+      font-size: 2rem;
+      color: var(--light-200);
+      // margin-bottom: 1rem;
+    }
+
+    .form {
+      @extend .flexCol;
+      gap: 0.5rem;
+      width: 70%;
+      margin-top: 3rem;
+
+      .input {
+        border: 0.68px solid var(--light-200);
+        height: 40px;
+        width: 100%;
+        background: transparent;
+        border-radius: 10px;
+        padding: 0 1rem;
+        color: var(--light-200);
+        caret-color: var(--light-200);
+        
+        &::placeholder {
+          color: var(--white);
+        }
+  
+        &:focus {
+          border: 0.68px solid var(--light-50);
+          outline: none;
+        }
+      }
+
+      .btn {
+        background: var(--light-200);
+        color: var(--white);
+        border: none;
+        font-weight: 700;
+        margin-top: 0.25rem;
+        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+  
+        .spinner {
+          transition: 0.3s;
+        }
+  
+        &:active .spinner {
+          transform: rotate(360);
+        }
+  
+        &:hover {
+          background: var(--dark-50);
+          color: var(--light-100);
+        }
+  
+        &:active {
+          transform: scale(0.95);
+          background: var(--light-300);
+          color: var(--white);
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .link {
+      color: var(--white);
+      align-self: center;
+      margin-top: 0.5rem;
+
+      a {
+        color: var(--light);
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+          color: var(--white);
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 40%;
+      margin: 0 auto;
+    }
+  }
+
+  .success {
+    position: absolute;
+    @extend .flexCol;
+    @extend .justContentCenter;
+    width: 70vw;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 60000;
+    color: var(--darkGreen);
+    text-align: center;
+    gap: 1rem;
+
+    a {
+      color: var(--darkGreen);
+      text-decoration: underline;
+
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: var(--darkGreen);
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+
+    .formDiv {
+      background-color: var(--white);
+      width: 60vw;
+      height: 100vh;
+      justify-content: center;
+
+      .form {
+        width: 50%;
+        // margin-top: 0;
+
+        .input {
+          border: 0.68px solid var(--light-200);
+          background: unset;
+          color: var(--dark-100);
+          caret-color: var(--black);
+          
+          &::placeholder {
+            color: var(--dark-100);
+          }
+    
+          &:focus {
+            border: 0.68px solid var(--light-300);
+          }
+        }
+  
+        .btn {
+          background: var(--light-200);
+          color: var(--white);
+        }
+      }
+    }
+    
+  }
+}
