@@ -10,6 +10,7 @@ import {
  } from "react-icons/fa6";
  import { MdInfoOutline, MdLineWeight, MdOutlineEmergencyRecording, MdOutlineAdminPanelSettings } from "react-icons/md";
  import { CiBag1 } from "react-icons/ci";
+ import { BsHouseDash } from "react-icons/bs";
  import { SiBoost, SiBookstack, SiSoundcharts } from "react-icons/si";
  import { AiOutlineStop, AiOutlineStock } from "react-icons/ai";
 import styles from './Nav.module.scss';
@@ -27,7 +28,7 @@ const tags = [
     id: 'production',
     name: 'Production',
     children: [
-      { id: 'rice', name: 'Rice', path: 'rice-production', icon: <CiBag1 className={styles.sidebarIcon} /> },
+      { id: 'rice', name: 'Rice', path: 'rice', icon: <CiBag1 className={styles.sidebarIcon} /> },
       { id: 'booster', name: 'Optimum Booster', path: 'optimum-booster', icon: <SiBoost className={styles.sidebarIcon} /> },
       { id: 'stopper', name: 'Stopper Solution', path: 'stopper-solution', icon: <AiOutlineStop className={styles.sidebarIcon} /> },
       { id: 'weight', name: 'Heavy Weight', path: 'heavy-weight', icon: <MdLineWeight className={styles.sidebarIcon} />},
@@ -74,6 +75,12 @@ const Nav = () => {
   return (
     <nav className={styles.container}>
       <ul className={styles.nav}>
+        <li className={styles.openLink}>
+          <Link to="/" className={styles.title}>
+            <BsHouseDash className={styles.sidebarIcon} />
+            <h3 className={styles.dash}>Dashboard</h3>
+          </Link>
+        </li>
         {tags.map((tag) => (
           <li key={tag.id} className={styles.openLink}>
             <h3 className={styles.title}>{tag.name}</h3>

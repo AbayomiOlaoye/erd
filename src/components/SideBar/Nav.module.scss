@@ -3,11 +3,31 @@
   background-color: var(--light-100);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+  
   .nav {
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+
+    .openLink {
+
+      .title {
+        color: var(--black);
+        display: flex;
+        gap: 0.25rem;
+
+        .sidebarIcon {
+          font-size: 20px !important;
+          color: var(--dark-100);
+        }
+
+        .dash {
+          margin-bottom: 1rem;;
+        }
+      }
+
+    }
 
     .link {
       margin-left: 0.5rem;
@@ -19,7 +39,7 @@
         align-items: center;
         border-radius: 10px;
         display: flex;
-        gap: 10px;
+        gap: 0.25rem;
         transition: all 0.3s;
 
         &:hover {
