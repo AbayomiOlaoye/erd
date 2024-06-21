@@ -5,7 +5,11 @@ import {
   MdLocationSearching,
   MdOutlineAttachEmail,
   MdOutlinePhonelinkLock,
+  MdOutlineAccountBalanceWallet,
+  MdOutlineHomeWork,
+  MdPayments,
 } from "react-icons/md";
+import { CiBank } from "react-icons/ci";
 import "../css/Staff.scss";
 
 const Staff = () => {
@@ -50,29 +54,29 @@ const Staff = () => {
             </div>
             <span className="userShowTitle">Next-of-Kin Details</span>
             <div className="userShowInfo">
-              <MdOutlineAttachEmail className="userShowIcon" />
+              <FaRegUser className="userShowIcon" />
               <span className="userShowInfoTitle">Ima Culeta</span>
             </div>
             <div className="userShowInfo">
-              <MdOutlineAttachEmail className="userShowIcon" />
+              <MdOutlinePhonelinkLock className="userShowIcon" />
               <span className="userShowInfoTitle">23456768756</span>
             </div>
             <span className="userShowTitle">Bank Details</span>
             <div className="userShowInfo">
-              <MdOutlineAttachEmail className="userShowIcon" />
+              <CiBank className="userShowIcon" />
               <span className="userShowInfoTitle">First Bank</span>
             </div>
             <div className="userShowInfo">
-              <MdOutlineAttachEmail className="userShowIcon" />
-              <span className="userShowInfoTitle">23456768756</span>
+              <MdOutlineAccountBalanceWallet className="userShowIcon" />
+              <span className="userShowInfoTitle">00456768756</span>
             </div>
             <span className="userShowTitle">Job Details</span>
             <div className="userShowInfo">
-              <MdOutlineAttachEmail className="userShowIcon" />
+              <MdOutlineHomeWork className="userShowIcon" />
               <span className="userShowInfoTitle">Rice Production</span>
             </div>
             <div className="userShowInfo">
-              <MdOutlineAttachEmail className="userShowIcon" />
+              <MdPayments className="userShowIcon" />
               <span className="userShowInfoTitle">#15,000</span>
             </div>
           </div>

@@ -8,6 +8,7 @@ import Rice from '../pages/Product/Rice';
 import RiceList from '../pages/Product/RiceList';
 import StaffData from '../pages/Hr/StaffData';
 import Staff from '../pages/Hr/Staff';
+import Payroll from '../pages/Hr/Payroll';
 
 
 const Auth = () => {
@@ -16,6 +17,7 @@ const Auth = () => {
       <Route path="/" element={<Home />} />
       <Route path="/staff_data" element={<StaffData />} />
       <Route path="/staff_data/:staffId" element={<Staff />} />
+      <Route path="/payroll" element={<Payroll />} />
       <Route path="/users" element={<UserList />} />
       <Route path="/user/:userId" element={<User />} />
       <Route path="/rice" element={<RiceList />} />
